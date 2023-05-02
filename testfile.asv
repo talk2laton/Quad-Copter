@@ -1,0 +1,12 @@
+close all
+camva(5); camlight(30,30); 
+fig = gcf; fig.Color = 'w'; 
+ax = gca;
+Q = QuadCopter(ax, [-15,  15,  0], 0.2);
+TargetList = [-15,   15,   10
+               15,   15,   10
+               15,  -15,   10
+              -15,  -15,   10
+              -15,  -15,    0];
+axis([-20,20,-20,20,-2,14]); grid on; hold on
+FlightController(Q, TargetList, 0.2, 'flightcontrol10.avi') ; 
